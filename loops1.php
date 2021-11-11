@@ -12,6 +12,17 @@
         $sum = $y+$y;
         }
         echo " Total is $sum";
+
+        for($z=1;$z<=5;$z++){
+            for ($f=1;$f<=$z;$f++){
+                echo "*";
+                    if($f< $z)
+                    {
+                    echo " ";
+                    }
+                }
+            echo "\n";
+            }
         **/
 
         ?>

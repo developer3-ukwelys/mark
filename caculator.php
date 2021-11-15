@@ -49,7 +49,7 @@
              }
             }
 
-            $name = new Machine("volvo","Uhs20000");
+            $name = new Machine("volvo", "ush20000");
             echo $name->name . "---";
             echo $price->price . "<br>";
         ?>
@@ -65,7 +65,7 @@
               $this->name = $name;
             }
             function __destruct() {
-              echo "The fruit is {$this->name}.";
+              echo "The fruit is" . $this->name . "<br>";
             }
           }
           
@@ -80,27 +80,29 @@
             public $test;
             public $weight;
           
-            function set_label($n) { 
-              $this->label = $n;
+            function set_label($label) { 
+              $this->label = $label;
             }
-            protected function set_test($n) { 
-              $this->color = $n;
+            public function set_test($test) { 
+              $this->color = $test;
             }
-            private function set_weight($n) {
-              $this->weight = $n;
+            public function set_weight($weight) {
+              $this->weight = $weight;
             }
           }
           
           $mango = new Eatables();
-          $mango->set_label('Mango'); 
-          echo $label->label . "<br>";
-          $mango->set_test('Yellow'); 
-          $mango->set_weight('300'); 
+          $label->set_label('Mango'); 
+         
+          $test->set_test('Yellow'); 
+          $weight->set_weight('300'); 
+          echo "a" . $this->label . "is" . $this->color . "and weighs" . $this->weight . "kgs";
         ?>
         <br><br>
 
         <?php
-        /**inheritance1 */
+        /** 
+        //inheritance1 
         class Fruit {
             public $name;
             public $color;
@@ -123,10 +125,12 @@
           $strawberry = new Strawberry("Strawberry", "red");  // OK. __construct() is public
           $strawberry->message(); // OK. message() is public
           $strawberry->intro(); // ERROR. intro() is protected
+        */
         ?>
         <br>
         <?php
-        /** inheritance to */
+        /** 
+        //inheritance to 
         class Fruit {
             public $name;
             public $color;
@@ -149,6 +153,7 @@
           
           $strawberry = new Strawberry("redberry", "red"); // OK. __construct() is public
           $strawberry->message(); // OK. message() is public and it calls intro() (which is protected) from within the derived class
+        */
         ?>
 
         <br><br>
